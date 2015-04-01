@@ -1,0 +1,32 @@
+﻿body {
+    text-align: center;
+}
+
+/*html { 
+  background: url('../mario-one-gameplay-arcade-classic-game.jpg') no-repeat center center fixed; 
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}*/
+
+#gameOver  {
+	font-size: 72pt;
+	font-family: cursive;
+	color: red;
+}
+
+#press  {
+	font-size: 36pt;
+	font-family: cursive;
+	color: yellow;
+}
+
+#game  {
+	z-index: 1;
+	visibility: hidden;
+	display: block;
+	position: absolute;
+	top: 13em;
+	left: 23em;
+}
