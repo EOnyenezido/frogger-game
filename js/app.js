@@ -101,13 +101,19 @@ Player.prototype.render = function()  {
 //var enemy1 = new Enemy();
 //var enemy2 = new Enemy();
 //var enemy3 = new Enemy();
-
 var allEnemies = [];
 
-for(var i = 0; i < 3; i++)  {
-  var enemy = new Enemy();
-  allEnemies.push(enemy);
+function initialise() {
+  allEnemies = [];
+
+  for(var i = 0; i < 3; i++)  {
+    var enemy = new Enemy();
+    allEnemies.push(enemy);
+  }
 }
+
+initialise();
+
 
 
 

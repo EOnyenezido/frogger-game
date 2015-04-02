@@ -32,6 +32,10 @@ var Engine = (function(global) {
     score.innerHTML = 0;
     var life = doc.getElementById("life");
     life.innerHTML = 5;
+    var level = doc.getElementById("level");
+    level.innerHTML = 1;
+    var highScore = doc.getElementById("highScore");
+    highScore.innerHTML = 0;
     //scoreDisplay.appendChild(doc.createTextNode("Score: "));
     //scoreDisplay.appendChild(doc.createTextNode(0));
     //var score = document.getElementById("score1");
@@ -152,8 +156,14 @@ var Engine = (function(global) {
         var scoreBoard = document.getElementById("game");
         scoreBoard.style.visibility = "visible";
         var finalScore = document.createElement("span");
-        finalScore.setAttribute("id", "final")
-        finalScore.innerHTML = "Your score is " + score.innerHTML;
+        finalScore.setAttribute("id", "final");
+        if(parseInt(score.innerHTML) > parseInt(highScore.innerHTML))  {
+            highScore.innerHTML = score.innerHTML;
+            finalScore.innerHTML = "NEW HIGHSCORE! " + highScore.innerHTML;
+        }
+        else  {
+            finalScore.innerHTML = "Your score is " + score.innerHTML;
+        }
         scoreBoard.insertBefore(finalScore, document.getElementById("press"));
         var newLine = document.createElement("br");
         scoreBoard.insertBefore(newLine, document.getElementById("press"));
@@ -174,8 +184,21 @@ var Engine = (function(global) {
         document.getElementById("game").style.visibility = "hidden";
         score.innerHTML = 0;
         life.innerHTML = 5;
+        level.innerHTML = 1;
+        initialise();
         gameLost = false;
         main();
+    }
+
+    function levelUp()  {
+        var currentLevel = parseInt(level.innerHTML);
+        currentLevel += 1;
+        level.innerHTML = currentLevel;
+        //var levelText = document.getElementById("newLevel");
+        //levelText.setAttribute("visibility", "hidden");
+        //setTimeout(levelText.setAttribute("visibility", "hidden"), 1000)
+        var enemy = new Enemy();
+        allEnemies.push(enemy);
     }
     
     function reachWater()  {
@@ -184,9 +207,12 @@ var Engine = (function(global) {
         winSound.setAttribute("src", "successful.mp3");
         winSound.play();
         var currentScore = parseInt(score.innerHTML);
-        currentScore += 1;
+        currentScore += 10;
         score.innerHTML = currentScore;
         check = false;
+        if(currentScore%100 === 0)  {
+            levelUp();
+        }
         setTimeout(function() {
             check = true;
             ctx.clearRect(0,0,1000,1000);

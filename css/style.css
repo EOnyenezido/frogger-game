@@ -31,6 +31,22 @@
 	left: 23em;
 }
 
+#levelText  {
+	z-index: 1;
+	display: block;
+	position: absolute;
+	top: 1em;
+	left: 4em;
+	visibility: visible;
+}
+
+#newLevel  {
+	font-size: 72pt;
+	font-family: cursive;
+	color: red;
+	visibility: visible;
+}
+
 #final  {
 	font-size: 30pt;
 	font-family: cursive;
@@ -39,14 +55,15 @@
 
 #scoreBoard  {
 	background-color: green;
-	height: 50px;
+	height: 30px;
 	width: 505px;
 	margin:0px auto -40px auto;
 	font-size: 14pt;
 	font-family: cursive;
 	color: white;
+	border: thin black solid;
 }
 
-.text {
-	margin-top: 40px;
+.scoreText {
+	margin-top: 10em;
 }
