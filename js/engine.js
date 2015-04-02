@@ -31,7 +31,7 @@ var Engine = (function(global) {
     var score = document.getElementById("score");
     score.innerHTML = 0;
     var life = doc.getElementById("life");
-    life.innerHTML = 1;
+    life.innerHTML = 5;
     //scoreDisplay.appendChild(doc.createTextNode("Score: "));
     //scoreDisplay.appendChild(doc.createTextNode(0));
     //var score = document.getElementById("score1");
@@ -173,7 +173,7 @@ var Engine = (function(global) {
         //clearInterval();
         document.getElementById("game").style.visibility = "hidden";
         score.innerHTML = 0;
-        life.innerHTML = 1;
+        life.innerHTML = 5;
         gameLost = false;
         main();
     }
