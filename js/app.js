@@ -46,8 +46,8 @@ Enemy.prototype.render = function() {
 var Player = function()  {
   this.x = 202;
   this.y = 395;
-  this.sprite = 'images/char-boy.png';
-  
+  var sprites = ['images/char-boy.png', 'images/char-pink-girl.png', 'images/char-cat-girl.png', 'images/char-horn-girl.png', 'images/char-princess-girl.png'];
+  this.sprite = sprites[Math.floor(Math.random() * sprites.length)];
 }
 
 var newX;

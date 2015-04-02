@@ -27,16 +27,16 @@
 	visibility: hidden;
 	display: block;
 	position: absolute;
-	top: 9em;
-	left: 23em;
+	top: 100px;
+	left: 350px;
 }
 
 #levelText  {
 	z-index: 1;
 	display: block;
 	position: absolute;
-	top: 1em;
-	left: 4em;
+	top: 1px;
+	left: 4px;
 	visibility: visible;
 }
 

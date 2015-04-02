@@ -186,6 +186,8 @@ var Engine = (function(global) {
         life.innerHTML = 5;
         level.innerHTML = 1;
         initialise();
+        var sprites = ['images/char-boy.png', 'images/char-pink-girl.png', 'images/char-cat-girl.png', 'images/char-horn-girl.png', 'images/char-princess-girl.png'];
+        player.sprite = sprites[Math.floor(Math.random() * sprites.length)]
         gameLost = false;
         main();
     }
@@ -297,7 +299,11 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-pink-girl.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
