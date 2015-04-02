@@ -27,6 +27,26 @@
 	visibility: hidden;
 	display: block;
 	position: absolute;
-	top: 13em;
+	top: 9em;
 	left: 23em;
+}
+
+#final  {
+	font-size: 30pt;
+	font-family: cursive;
+	color: blue;
+}
+
+#scoreBoard  {
+	background-color: green;
+	height: 50px;
+	width: 505px;
+	margin:0px auto -40px auto;
+	font-size: 14pt;
+	font-family: cursive;
+	color: white;
+}
+
+.text {
+	margin-top: 40px;
 }

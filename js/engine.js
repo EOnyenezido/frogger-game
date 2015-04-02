@@ -31,7 +31,7 @@ var Engine = (function(global) {
     var score = document.getElementById("score");
     score.innerHTML = 0;
     var life = doc.getElementById("life");
-    life.innerHTML = 5;
+    life.innerHTML = 1;
     //scoreDisplay.appendChild(doc.createTextNode("Score: "));
     //scoreDisplay.appendChild(doc.createTextNode(0));
     //var score = document.getElementById("score1");
@@ -149,18 +149,31 @@ var Engine = (function(global) {
 
 
     function gameOver()  {
-        document.getElementById("game").style.visibility = "visible";
+        var scoreBoard = document.getElementById("game");
+        scoreBoard.style.visibility = "visible";
+        var finalScore = document.createElement("span");
+        finalScore.setAttribute("id", "final")
+        finalScore.innerHTML = "Your score is " + score.innerHTML;
+        scoreBoard.insertBefore(finalScore, document.getElementById("press"));
+        var newLine = document.createElement("br");
+        scoreBoard.insertBefore(newLine, document.getElementById("press"));
+        //var gameOverText = document.getElementById("gameOver");
+        //gameOverText.style.visibility = "visible";
         document.addEventListener('keyup', function(event)  {
             if (event.keyCode === 13)  {
+                scoreBoard.removeChild(finalScore);
+                scoreBoard.removeChild(newLine);
                 reStart();
             }
         })
+        
     }
 
     function reStart()  {
+        //clearInterval();
         document.getElementById("game").style.visibility = "hidden";
         score.innerHTML = 0;
-        life.innerHTML = 5;
+        life.innerHTML = 1;
         gameLost = false;
         main();
     }

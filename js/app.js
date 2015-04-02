@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
       var fastOrSlow = [256, 512];
       this.x = -100;
       this.y = initialPosition[Math.floor(Math.random() * initialPosition.length)];
-      this.speed = fastOrSlow [Math.floor(Math.random() * fastOrSlow.length)];
+      this.speed = fastOrSlow[Math.floor(Math.random() * fastOrSlow.length)];
     }
     else  {
       this.x += this.speed * dt;
@@ -98,11 +98,18 @@ Player.prototype.render = function()  {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var enemy1 = new Enemy();
-var enemy2 = new Enemy();
-var enemy3 = new Enemy();
+//var enemy1 = new Enemy();
+//var enemy2 = new Enemy();
+//var enemy3 = new Enemy();
 
-var allEnemies = [enemy1, enemy2, enemy3];
+var allEnemies = [];
+
+for(var i = 0; i < 3; i++)  {
+  var enemy = new Enemy();
+  allEnemies.push(enemy);
+}
+
+
 
 var player = new Player();
 
